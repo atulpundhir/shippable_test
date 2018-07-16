@@ -1,18 +1,9 @@
 language: java
 jdk:oraclejdk7
 
-env:
-  - #env1=foo
-  - #env2=bar
-
 build:
   pre_ci:
     - echo "PRE CI"
-  pre_ci_boot:
-    image_name:
-    image_tag:
-    pull:
-    options:
   ci:
     - mvn clean
     - mvn build
@@ -23,8 +14,3 @@ build:
     - echo "Success"
   on_failure:
     - echo "Failed"
-  cache:
-  cache_dir_list:
-    - #dir1
-  push:
-    - #command1
