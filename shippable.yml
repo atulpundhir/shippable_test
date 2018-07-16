@@ -5,8 +5,6 @@ build:
   pre_ci:
     - echo "PRE CI"
   ci:
-    - mvn clean
-    - mvn build
     - mvn package
   post_ci:
     - echo "POST CI"
