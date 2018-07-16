@@ -1,9 +1,6 @@
 language: java
 jdk:oraclejdk7
 
-services:
-  - #any supported service
-
 env:
   - #env1=foo
   - #env2=bar
