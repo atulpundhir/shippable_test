@@ -1,6 +1,5 @@
 language: java
-
-java: 1.8
+jdk:oraclejdk7
 
 services:
   - #any supported service
