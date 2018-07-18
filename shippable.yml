@@ -12,3 +12,9 @@ build:
     - echo "Success"
   on_failure:
     - echo "Failed"
+    
+integrations:                               
+  hub:
+    - integrationName: Shippable_Docker_Test    #replace with your subscription integration name   
+      type: dockerRegistryLogin                        
+
