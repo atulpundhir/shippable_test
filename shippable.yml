@@ -9,7 +9,7 @@ build:
   post_ci:
     - echo "POST CI"
   on_success:
-    - echo "Success"
+    - echo " Success"
   on_failure:
     - echo " Failed"
     
