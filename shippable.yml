@@ -15,6 +15,6 @@ build:
     
 integrations:                               
   hub:
-    - integrationName: Shippable_Docker_Test    #replace with your subscription integration name   
+    - integrationName:  Shippable_Docker_Test    #replace with your subscription integration name   
       type: dockerRegistryLogin                        
 
