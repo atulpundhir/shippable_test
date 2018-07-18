@@ -11,7 +11,7 @@ build:
   on_success:
     - echo "Success"
   on_failure:
-    - echo "Failed"
+    - echo " Failed"
     
 integrations:                               
   hub:
