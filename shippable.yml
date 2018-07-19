@@ -7,7 +7,7 @@ build:
   ci:
     - mvn package
   post_ci:
-    - docker build -t atulpundhir/shippable_test:$BRANCH.$BUILD_NUMBER 
+    - docker build -t atulpundhir/shippable_test:$BRANCH.$BUILD_NUMBER .
     - docker push -t atulpundhir/shippable_test:$BRANCH.$BUILD_NUMBER
     - echo "POST CI"
   on_success:
