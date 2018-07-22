@@ -12,7 +12,11 @@ after_success:
   
 build:
   pre_ci:
-    - echo "PRE CI"
+    image_name: atulpundhir/spring-web
+    image_tag: latest
+    pull: true
+    env: FOO=bar
+    options: "-e /opt/tomcat/bin/startup.sh & /bin/bash"
   ci:
     - mvn package
   post_ci:
