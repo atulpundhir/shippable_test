@@ -12,7 +12,7 @@ after_success:
   
 build:
   pre_ci:
-    - docker build -t atulpundhir/spring-web:latest .  
+    - echo "PRE-CLI"
   pre_ci_boot:
     image_name: atulpundhir/spring-web
     image_tag: latest
