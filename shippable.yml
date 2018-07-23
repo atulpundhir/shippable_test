@@ -19,8 +19,10 @@ build:
       image_tag: latest
       pull: true
       env: FOO=bar
-      options: "--mount source=app,target=/app"
+      options: "-v /tmp/shared:/app"
   ci:
+    - mkdir -p shippable/testresults
+    - mkdir -p shippable/codecoverage
     - mvn package
   post_ci:
     - docker build -t atulpundhir/spring-web:$BRANCH.$BUILD_NUMBER .
