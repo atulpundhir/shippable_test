@@ -13,7 +13,7 @@ after_success:
 build:
   pre_ci:
     - echo "PRE-CLI"
-    - echo $HOME
+    - echo $SHIPPABLE_BUILD_DIR
   pre_ci_boot:
     image_name: atulpundhir/spring-web
     image_tag: latest
