@@ -21,7 +21,6 @@ build:
   ci:
     - mvn package
   post_ci:
-    - docker build -t atulpundhir/spring-web:$BRANCH.$BUILD_NUMBER .
     - docker push atulpundhir/spring-web:$BRANCH.$BUILD_NUMBER
     - echo "POST CI"
   on_success:
