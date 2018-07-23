@@ -25,7 +25,6 @@ build:
     - mkdir -p shippable/codecoverage
     - mvn package
   post_ci:
-    - cp /app/target/elligo_sample.war /opt/tomcat/webapps/
     - docker build -t atulpundhir/spring-web:$BRANCH.$BUILD_NUMBER .
     - docker push atulpundhir/spring-web:$BRANCH.$BUILD_NUMBER
     - echo "POST CI"
