@@ -24,6 +24,7 @@ build:
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - mvn package
+    - target/elligo_sample.war ./
   post_ci:
     - docker build -t atulpundhir/spring-web:$BRANCH.$BUILD_NUMBER .
     - docker push atulpundhir/spring-web:$BRANCH.$BUILD_NUMBER
