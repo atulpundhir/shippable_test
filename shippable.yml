@@ -15,6 +15,10 @@ build:
     - echo "PRE-CLI"
     - echo $SHIPPABLE_BUILD_DIR
   pre_ci_boot:
+      image_name: atulpundhir/spring-web
+      image_tag: latest
+      pull: true
+      env: FOO=bar
     - options: "-v /app:/app"
   ci:
     - mvn package
