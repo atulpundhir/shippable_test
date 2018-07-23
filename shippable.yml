@@ -19,7 +19,7 @@ build:
       image_tag: latest
       pull: true
       env: FOO=bar
-      options: "-v /app:/app"
+      options: "--mount source=/app,target=/app"
   ci:
     - mvn package
   post_ci:
