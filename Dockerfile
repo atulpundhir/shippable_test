@@ -44,7 +44,7 @@ EXPOSE 8080
 EXPOSE 8009
 
 VOLUME /tssmp
-COPY $HOME/data/elligo_sample.war /opt/tomcat/webapps/
+COPY elligo_sample.war /opt/tomcat/webapps/
 
 #ENTRYPOINT ["/opt/tomcat/bin/startup.sh"]
 #CMD [ "run" ]
