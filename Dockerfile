@@ -44,7 +44,7 @@ ADD . /app
 EXPOSE 8080
 EXPOSE 8009
 
-COPY /app/target/elligo_sample.war /opt/tomcat/webapps
+COPY target/elligo_sample.war /opt/tomcat/webapps
 
 #ENTRYPOINT ["/opt/tomcat/bin/startup.sh"]
 #CMD [ "run" ]
