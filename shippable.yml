@@ -9,6 +9,7 @@ before_script:
   - curl -sO https://raw.githubusercontent.com/rix0rrr/cover2cover/master/cover2cover.py && chmod +x cover2cover.py
 after_script:
   - echo "After script is called"
+  - python cover2cover.py build/reports/jacoco/test/jacocoTestReport.xml src/main/java > shippable/codecoverage/coverage.xml
 after_success:
   - echo "Script is successful"
   
@@ -33,7 +34,6 @@ build:
     - if [ "$BRANCH" == "develop" ]  && [ "$IS_PULL_REQUEST" == true ]; then echo "develop branch"; fi
     - if [ "$BRANCH" == "test" ]  && [ "$IS_PULL_REQUEST" == true ]; then echo "test branch"; fi
     - mkdir -p shippable/testresults
-    - mkdir -p shippable/codecoverage
     - mvn package
   post_ci:
     - docker build -t $REPO_NAME:$BRANCH.$BUILD_NUMBER .
