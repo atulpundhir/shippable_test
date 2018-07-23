@@ -1,12 +1,14 @@
 language: java
 jdk: openjdk7
+env:
+  global:
+    - REPO_NAME=atulpundhir/spring-web
 before_script:
   - mkdir -p shippable/codecoverage
   # Using cover2cover to translate Jacoco output to Cobertura format for Shippable's sake
   - curl -sO https://raw.githubusercontent.com/rix0rrr/cover2cover/master/cover2cover.py && chmod +x cover2cover.py
 after_script:
-  - mv build/test-results shippable/testresults
-  - python cover2cover.py build/reports/jacoco/test/jacocoTestReport.xml src/main/java > shippable/codecoverage/coverage.xml
+  - echo "After script is called"
 after_success:
   - echo "Script is successful"
   
@@ -21,12 +23,15 @@ build:
       env: FOO=bar
       options: "-v /tmp/shared:/app"
   ci:
+    - if [ "$BRANCH" == "master" ]  && [ "$IS_PULL_REQUEST" == true ]; then echo "master branch"; fi
+    - if [ "$BRANCH" == "develop" ]  && [ "$IS_PULL_REQUEST" == true ]; then echo "develop branch"; fi
+    - if [ "$BRANCH" == "test" ]  && [ "$IS_PULL_REQUEST" == true ]; then echo "test branch"; fi
     - mkdir -p shippable/testresults
     - mkdir -p shippable/codecoverage
     - mvn package
   post_ci:
-    - docker build -t atulpundhir/spring-web:$BRANCH.$BUILD_NUMBER .
-    - docker push atulpundhir/spring-web:$BRANCH.$BUILD_NUMBER
+    - docker build -t $REPO_NAME:$BRANCH.$BUILD_NUMBER .
+    - docker push $REPO_NAME:$BRANCH.$BUILD_NUMBER
     - echo "POST CI"
   on_success:
     - echo " Success"
