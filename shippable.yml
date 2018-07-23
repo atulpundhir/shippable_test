@@ -12,6 +12,12 @@ after_script:
 after_success:
   - echo "Script is successful"
   
+branches:
+  only:
+    - master
+    - develop
+    - test
+  
 build:
   pre_ci:
     - echo "PRE-CLI"
