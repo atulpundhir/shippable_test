@@ -43,8 +43,8 @@ WORKDIR /opt/tomcat
 EXPOSE 8080
 EXPOSE 8009
 
-VOLUME /tssmp
-COPY elligo_sample.war /opt/tomcat/webapps/
+VOLUME /app
+COPY /app/elligo_sample.war /opt/tomcat/webapps/
 
 #ENTRYPOINT ["/opt/tomcat/bin/startup.sh"]
 #CMD [ "run" ]
