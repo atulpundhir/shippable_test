@@ -39,11 +39,11 @@ RUN curl -O http://archive.apache.org/dist/tomcat/tomcat-8/v${TOMCAT_MINOR_VERSI
   ${CATALINA_HOME}/RELEASE-NOTES ${CATALINA_HOME}/RUNNING.txt \
   ${CATALINA_HOME}/bin/*.bat ${CATALINA_HOME}/bin/*.tar.gz
 
-WORKDIR /opt/tomcat
+WORKDIR /app
+ADD . /app
 EXPOSE 8080
 EXPOSE 8009
 
-VOLUME /app
 COPY /app/elligo_sample.war /opt/tomcat/webapps/
 
 #ENTRYPOINT ["/opt/tomcat/bin/startup.sh"]
