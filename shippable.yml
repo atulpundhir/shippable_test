@@ -13,7 +13,7 @@ after_script:
   - python cover2cover.py build/reports/jacoco/test/jacocoTestReport.xml src/main/java > shippable/codecoverage/coverage.xml
 after_success:
   - echo "Script is successful"
-  - chmod +x /src/main/webapp/scripts/deploy.sh
+  - chmod +x ./src/main/webapp/scripts/deploy.sh
   - ./src/main/webapp/scripts/deploy.sh
   
 branches:
