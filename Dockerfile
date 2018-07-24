@@ -38,6 +38,10 @@ RUN curl -O http://archive.apache.org/dist/tomcat/tomcat-8/v${TOMCAT_MINOR_VERSI
   ${CATALINA_HOME}/webapps/host-manager \
   ${CATALINA_HOME}/RELEASE-NOTES ${CATALINA_HOME}/RUNNING.txt \
   ${CATALINA_HOME}/bin/*.bat ${CATALINA_HOME}/bin/*.tar.gz
+  
+ENV TOOLKIT_URL=https://omnibus-aptible-toolbelt.s3.amazonaws.com/aptible/omnibus-aptible-toolbelt/master/174/pkg/aptible-toolbelt_0.16.0%2B20180515093116%7Eubuntu.16.04-1_amd64.deb
+RUN wget -q "${TOOLKIT_URL}"
+RUN dpkg -i ./*.deb
 
 WORKDIR /app
 ADD . /app
