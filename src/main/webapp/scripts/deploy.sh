@@ -9,6 +9,7 @@ DOCKER_IMAGE=atulpundhir/spring-web:${BRANCH}.${BUILD_NUMBER}
 APTIBLE_EMAIL=atul.pundhir@saama.com
 DOCKERHUB_USERNAME=atulpundhir
 
+echo ${APTIBLE_PWD}
 aptible login --email="${APTIBLE_EMAIL}" --password="${APTIBLE_PWD}" --lifetime=600s
 
 if [ "$BRANCH" == "test" ]; then
