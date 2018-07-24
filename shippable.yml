@@ -9,7 +9,7 @@ before_script:
   # Using cover2cover to translate Jacoco output to Cobertura format for Shippable's sake
   - curl -sO https://raw.githubusercontent.com/rix0rrr/cover2cover/master/cover2cover.py && chmod +x cover2cover.py
 after_script:
-  - echo "After script is called"
+  - echo "After script is called."
   # python cover2cover.py build/reports/jacoco/test/jacocoTestReport.xml src/main/java > shippable/codecoverage/coverage.xml
 after_success:
   - echo "Script is successful"
