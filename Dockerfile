@@ -50,8 +50,8 @@ EXPOSE 8009
 
 COPY target/elligo_sample.war /opt/tomcat/webapps
 
+CMD ["/bin/sh", "/opt/tomcat/bin/catalina.sh", "run"]
 #ENTRYPOINT ["/opt/tomcat/bin/startup.sh"]
-#CMD [ "run" ]
 
 
 # Define default command.
