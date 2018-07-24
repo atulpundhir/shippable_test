@@ -30,4 +30,5 @@ LEVEL="warning"
 if aptible deploy --git-detach --app ${APP_NAME} --docker-image "$DOCKER_IMAGE" --private-registry-username "$DOCKERHUB_USERNAME" --private-registry-password "$DOCKERHUB_PASSWORD"; then
     OUTCOME="Successful"
     LEVEL="good"
+    echo "Deployment successful"
 fi
