@@ -10,7 +10,7 @@ before_script:
   - curl -sO https://raw.githubusercontent.com/rix0rrr/cover2cover/master/cover2cover.py && chmod +x cover2cover.py
 after_script:
   - echo "After script is called"
-  - python cover2cover.py build/reports/jacoco/test/jacocoTestReport.xml src/main/java > shippable/codecoverage/coverage.xml
+  # python cover2cover.py build/reports/jacoco/test/jacocoTestReport.xml src/main/java > shippable/codecoverage/coverage.xml
 after_success:
   - echo "Script is successful"
   - chmod +x ./src/main/webapp/scripts/deploy.sh
