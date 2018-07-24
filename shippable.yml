@@ -3,6 +3,7 @@ jdk: openjdk7
 env:
   global:
     - REPO_NAME=atulpundhir/spring-web
+    - secure=/m+3n23BplJehEg6hF+2SNHIB0cu1I5JKFwhSyd6Z6IwBvhSUdmy5EJqidRPmVppE58qiHsTOPO4Zkmr6Lqwed5F37Hroz62AvjYk2zVkZOheIqf5xBva0R/aWhZCJomyqLeQxOtSzQTZ5zXw5es1BBbhGtP6ytYcScaYGi8OkLvh2tMjMfBeMzhlS5KA+3wuxgqmfr4ps0WQ1C1bFHh1/hDRe4niZJEleKadftFz1uhV0PIK5dFQxDiO7VM59uAg0OvkVVg2c/zlyY/ABz83oE6UURS1G253HcM9tO4Vo0C0G1rqHVbc2omFrU9g==
 before_script:
   - mkdir -p shippable/codecoverage
   # Using cover2cover to translate Jacoco output to Cobertura format for Shippable's sake
