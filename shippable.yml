@@ -24,7 +24,7 @@ branches:
   
 build:
   pre_ci:
-    - echo "PRE-CLI"
+    - echo "PRE-CLI  "
     - echo $SHIPPABLE_BUILD_DIR
   pre_ci_boot:
       image_name: atulpundhir/spring-web
